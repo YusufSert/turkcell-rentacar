@@ -5,20 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="41e5468e-2ea2-4921-82c8-ed25d9c36b12" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/api/controllers/ModelsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/abstracts/ModelService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/concretes/ModelManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/dto/requests/create/CreateModelRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/dto/responses/create/CreateModelResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/dto/responses/get/GetAllModelsResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/dto/responses/get/GetModelResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/repository/ModelRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/RentACarApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/RentACarApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/api/controllers/BrandsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/api/controllers/BrandsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/abstracts/BrandService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/abstracts/BrandService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/concretes/BrandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/concretes/BrandManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/entities/Brand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/entities/Brand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/entities/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/entities/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/concretes/CarManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/concretes/CarManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/concretes/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/concretes/ModelManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -45,6 +45,7 @@ public class CarManager implements CarService {
         checkIfCarExists(id);
         Car car = mapper.map(request, Car.class);
         car.setId(id);
+        repository.save(car);
         return mapper.map(car, CreateCarResponse.class);
     }
 

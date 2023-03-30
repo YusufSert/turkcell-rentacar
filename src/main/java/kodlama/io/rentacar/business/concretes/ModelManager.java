@@ -47,14 +47,20 @@ public class ModelManager implements ModelService {
 
     @Override
     public CreateModelResponse update(int id, CreateModelRequest request) {
-        Model model = repository.findById(id).orElseThrow();
-        model.setName(request.getName());
+        checkIfModelExists(id);
+        Model model = mapper.map(request, Model.class);
+        model.setId(id);
         repository.save(model);
         return mapper.map(model, CreateModelResponse.class);
     }
 
     @Override
     public void delete(int id) {
+        checkIfModelExists(id);
         repository.deleteById(id);
+    }
+
+    private void checkIfModelExists(int id) {
+        if(!repository.existsById(id)) throw new RuntimeException("Marka bulunamadı!");
     }
 }

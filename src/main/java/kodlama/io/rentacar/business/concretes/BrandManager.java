@@ -2,6 +2,7 @@ package kodlama.io.rentacar.business.concretes;
 
 import kodlama.io.rentacar.business.abstracts.BrandService;
 import kodlama.io.rentacar.business.dto.requests.create.CreateBrandRequest;
+import kodlama.io.rentacar.business.dto.requests.create.CreateModelRequest;
 import kodlama.io.rentacar.business.dto.responses.create.CreateBrandResponse;
 import kodlama.io.rentacar.business.dto.responses.get.GetAllBrandsResponse;
 import kodlama.io.rentacar.business.dto.responses.get.GetBrandResponse;
@@ -54,16 +55,16 @@ public class BrandManager implements BrandService {
         Brand brand = mapper.map(request, Brand.class);
         brand.setId(0);
         repository.save(brand);
-        CreateBrandResponse response = mapper.map(brand, CreateBrandResponse.class);
-
-        return response;
+        return mapper.map(brand, CreateBrandResponse.class);
     }
 
     @Override
-    public Brand update(int id, Brand brand) {
+    public CreateBrandResponse update(int id, CreateModelRequest request) {
         checkIfBrandExists(id);
+        Brand brand = mapper.map(request, Brand.class);
         brand.setId(id);
-        return repository.save(brand);
+        repository.save(brand);
+        return mapper.map(brand, CreateBrandResponse.class);
     }
 
     @Override
