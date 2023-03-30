@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="41e5468e-2ea2-4921-82c8-ed25d9c36b12" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/api/controllers/ModelsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/abstracts/ModelService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/concretes/ModelManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/dto/requests/create/CreateModelRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/dto/responses/create/CreateModelResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/dto/responses/get/GetAllModelsResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/dto/responses/get/GetModelResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/repository/ModelRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/RentACarApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/RentACarApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/api/controllers/BrandsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/api/controllers/BrandsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/concretes/BrandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/concretes/BrandManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/entities/Brand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/entities/Brand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/entities/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/entities/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2NhIcwmbE50c4r69Z8LqikIk8q7" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/yusufcan/Desktop/Turkcell/kktcell_e-commerce&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="RentACarApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="kodlama.io.rentacar.RentACarApplication" />
+      <module name="rent-a-car" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="kodlama.io.rentacar.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.RentACarApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="41e5468e-2ea2-4921-82c8-ed25d9c36b12" name="Changes" comment="" />
+      <created>1680109969826</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1680109969826</updated>
+    </task>
+    <servers />
+  </component>
+</project>
