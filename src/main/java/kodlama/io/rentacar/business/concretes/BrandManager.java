@@ -2,14 +2,12 @@ package kodlama.io.rentacar.business.concretes;
 
 import kodlama.io.rentacar.business.abstracts.BrandService;
 import kodlama.io.rentacar.business.dto.requests.create.CreateBrandRequest;
-import kodlama.io.rentacar.business.dto.requests.create.CreateModelRequest;
 import kodlama.io.rentacar.business.dto.responses.create.CreateBrandResponse;
 import kodlama.io.rentacar.business.dto.responses.get.GetAllBrandsResponse;
 import kodlama.io.rentacar.business.dto.responses.get.GetBrandResponse;
 import kodlama.io.rentacar.entities.Brand;
 import kodlama.io.rentacar.repository.BrandRepository;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
@@ -59,7 +57,7 @@ public class BrandManager implements BrandService {
     }
 
     @Override
-    public CreateBrandResponse update(int id, CreateModelRequest request) {
+    public CreateBrandResponse update(int id, CreateBrandRequest request) {
         checkIfBrandExists(id);
         Brand brand = mapper.map(request, Brand.class);
         brand.setId(id);
