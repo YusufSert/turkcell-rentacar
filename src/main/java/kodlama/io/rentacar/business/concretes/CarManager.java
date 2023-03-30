@@ -36,6 +36,7 @@ public class CarManager implements CarService {
     @Override
     public CreateCarResponse add(CreateCarRequest request) {
         Car car = mapper.map(request, Car.class);
+        car.setId(0);
         repository.save(car);
         return mapper.map(car, CreateCarResponse.class);
     }

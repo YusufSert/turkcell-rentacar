@@ -41,7 +41,14 @@ public class ModelManager implements ModelService {
     @Override
     public CreateModelResponse add(CreateModelRequest request) {
         Model model = mapper.map(request, Model.class);
+        //request     =>Integer brand_id, String name
+        //model       => Integer id, String name, Brand brand
+        //Model-Table => | id | name | brand_id(FK) |
+        //Model id must be set it 0 because mapper mixes the brand_id and the id of the model
+        model.setId(0);
         repository.save(model);
+        //System.out.println(model.getId());
+        //System.out.println(model.getBrand().getId());
         return mapper.map(model, CreateModelResponse.class);
     }
 

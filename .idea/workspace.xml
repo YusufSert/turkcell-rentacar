@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="41e5468e-2ea2-4921-82c8-ed25d9c36b12" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/abstracts/BrandService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/abstracts/BrandService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/concretes/BrandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/concretes/BrandManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/concretes/CarManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/concretes/CarManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/concretes/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/concretes/ModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/dto/requests/create/CreateCarRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/dto/requests/create/CreateCarRequest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
