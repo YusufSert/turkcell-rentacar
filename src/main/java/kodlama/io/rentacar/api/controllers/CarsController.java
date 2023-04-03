@@ -2,9 +2,11 @@ package kodlama.io.rentacar.api.controllers;
 
 import kodlama.io.rentacar.business.abstracts.CarService;
 import kodlama.io.rentacar.business.dto.requests.create.CreateCarRequest;
+import kodlama.io.rentacar.business.dto.requests.update.UpdateCarRequest;
 import kodlama.io.rentacar.business.dto.responses.create.CreateCarResponse;
 import kodlama.io.rentacar.business.dto.responses.get.GetAllCarsResponse;
 import kodlama.io.rentacar.business.dto.responses.get.GetCarResponse;
+import kodlama.io.rentacar.business.dto.responses.update.UpdateCarResponse;
 import kodlama.io.rentacar.entities.enums.State;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -20,8 +22,9 @@ private final CarService service;
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    List<GetAllCarsResponse> getAll(@RequestParam(required = false) Boolean choice) {
-        return service.getAll(choice);
+    List<GetAllCarsResponse> getAll(@RequestParam(required = false) State state) {
+        //state variable equals to null if no value given
+        return service.getAll(state);
     }
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
@@ -39,7 +42,7 @@ private final CarService service;
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    CreateCarResponse update(@PathVariable int id, @RequestBody CreateCarRequest request) {
+    UpdateCarResponse update(@PathVariable int id, @RequestBody UpdateCarRequest request) {
         return service.update(id, request);
     }
 

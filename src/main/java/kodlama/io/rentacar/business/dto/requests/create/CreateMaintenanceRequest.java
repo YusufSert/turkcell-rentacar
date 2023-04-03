@@ -15,6 +15,10 @@ public class CreateMaintenanceRequest {
     private int carId;
     //private Date arrivalDate;
 
-    private Date releaseDate;
+    private double cost;
+
+    private Date dateIn;
+
+    private String description;
 
 }

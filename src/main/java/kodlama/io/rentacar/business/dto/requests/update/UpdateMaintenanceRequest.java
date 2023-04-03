@@ -13,7 +13,10 @@ import java.util.Date;
 @AllArgsConstructor
 public class UpdateMaintenanceRequest {
     private int carId;
-    private Date arrivalDate;
+    private double cost;
+    private String description;
 
-    private Date releaseDate;
+    private Date dateIn;
+
+    private Date dateOut;
 }

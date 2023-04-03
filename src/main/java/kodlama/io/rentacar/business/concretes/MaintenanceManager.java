@@ -4,11 +4,13 @@ import kodlama.io.rentacar.business.abstracts.CarService;
 import kodlama.io.rentacar.business.abstracts.MaintenanceService;
 import kodlama.io.rentacar.business.dto.requests.create.CreateCarRequest;
 import kodlama.io.rentacar.business.dto.requests.create.CreateMaintenanceRequest;
+import kodlama.io.rentacar.business.dto.requests.update.UpdateCarRequest;
 import kodlama.io.rentacar.business.dto.requests.update.UpdateMaintenanceRequest;
 import kodlama.io.rentacar.business.dto.responses.create.CreateMaintenanceResponse;
 import kodlama.io.rentacar.business.dto.responses.get.GetAllMaintenancesResponse;
 import kodlama.io.rentacar.business.dto.responses.get.GetCarResponse;
 import kodlama.io.rentacar.business.dto.responses.get.GetMaintenanceResponse;
+import kodlama.io.rentacar.business.dto.responses.update.UpdateCarResponse;
 import kodlama.io.rentacar.business.dto.responses.update.UpdateMaintenanceResponse;
 import kodlama.io.rentacar.entities.Brand;
 import kodlama.io.rentacar.entities.Car;
@@ -41,13 +43,20 @@ public class MaintenanceManager implements MaintenanceService {
 
     @Override
     public CreateMaintenanceResponse add(CreateMaintenanceRequest request) {
+        // Map Request to Maintance
         Maintenance maintenance = mapper.map(request, Maintenance.class);
         maintenance.setId(0);
+
+        // Eğer id of the car not found in car table "save()" will throw error
         repository.save(maintenance);
-        GetCarResponse car = carService.getById(request.getCarId());
-        checkAll(car.getState());
-        car.setState(State.MAINTANCE);
-        carService.add(mapper.map(car, CreateCarRequest.class));
+
+        // Get the id of the car that will send to maintance
+        int carId = maintenance.getCar().getId();
+
+        // If car already in maintance method will throw exception
+        carService.updateCarState(carId, State.MAINTANCE);
+
+        // Map Maintance to Response object
         return mapper.map(maintenance, CreateMaintenanceResponse.class);
     }
 
@@ -55,8 +64,20 @@ public class MaintenanceManager implements MaintenanceService {
     public UpdateMaintenanceResponse update(int id, UpdateMaintenanceRequest request) {
         Maintenance maintenance = mapper.map(request, Maintenance.class);
         maintenance.setId(id);
-        repository.save(maintenance);
-        return mapper.map(maintenance, UpdateMaintenanceResponse.class);
+
+        // Save the maintance and map Maintance to Response
+        UpdateMaintenanceResponse response = mapper.map(repository.save(maintenance), UpdateMaintenanceResponse.class);
+
+        //Check if date_out column not nul, if not change state of the car
+        if(maintenance.getDateOut() != null) {
+
+            // Get the id of the car that will send to maintance
+            int carId = maintenance.getCar().getId();
+
+            //Update the state of the car  carService.updateCarState(id, State.AVAILABLE);
+            carService.updateCarState(carId, State.AVAILABLE);
+        }
+        return response;
     }
 
     @Override
@@ -64,15 +85,4 @@ public class MaintenanceManager implements MaintenanceService {
         repository.deleteById(id);
     }
 
-    private void checkAll(State state) {
-        checkIfTamir(state);
-        checkIfRent(state);
-    }
-    private void checkIfTamir(State state) {
-        if(state.equals(State.MAINTANCE)) throw new RuntimeException("Zaten bakımda :)");
-    }
-
-    private void checkIfRent(State state) {
-        if(state.equals(State.RENTED)) throw new RuntimeException("Rented :(");
-    }
 }

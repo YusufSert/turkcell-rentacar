@@ -14,8 +14,11 @@ import java.util.Date;
 public class UpdateMaintenanceResponse {
     private int id;
     private int carId;
-    private Date arrivalDate;
+    private Date dateIn;
 
-    private Date releaseDate;
+    private Date dateOut;
+    private double cost;
+
+    private String description;
 }
 

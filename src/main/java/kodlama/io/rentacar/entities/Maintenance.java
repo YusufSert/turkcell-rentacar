@@ -26,8 +26,13 @@ public class Maintenance {
     private Car car;
 
 
-    @CreationTimestamp
-    private Date arrivalDate;
+    @Column(nullable = false)
+    private Date dateIn;
 
-    private Date releaseDate;
+    @Column(nullable = true)
+    private Date dateOut;
+
+    private double cost;
+
+    private String description;
 }

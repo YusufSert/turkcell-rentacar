@@ -10,6 +10,6 @@ import java.util.List;
 
 public interface CarRepository extends JpaRepository<Car, Integer> {
     // Returns cars where car by its state(AVAILABLE, RENTED, MAINTANCE)
-    @Query(value = "SELECT * FROM cars where state = ?", nativeQuery = true)
+    @Query("SELECT c FROM Car c where c.state = ?1")
         List<Car> getCarByState(State state);
 }

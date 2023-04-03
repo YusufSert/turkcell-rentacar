@@ -14,7 +14,10 @@ import java.util.Date;
 public class GetAllMaintenancesResponse {
     private int id;
     private int carId;
-    private Date arrivalDate;
+    private Date dateIn;
+    private Date dateOut;
 
-    private Date releaseDate;
+    private double cost;
+
+    private String description;
 }
