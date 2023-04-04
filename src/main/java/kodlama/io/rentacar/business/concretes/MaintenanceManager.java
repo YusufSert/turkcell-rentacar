@@ -46,8 +46,9 @@ public class MaintenanceManager implements MaintenanceService {
         // Map Request to Maintance
         Maintenance maintenance = mapper.map(request, Maintenance.class);
         maintenance.setId(0);
+        maintenance.setRepaired(false);
 
-        // Eğer id of the car not found in car table "save()" will throw error
+        // Eğer id of the car not found in car table "save()" will throw exception(FK constraint)
         repository.save(maintenance);
 
         // Get the id of the car that will send to maintance
@@ -68,13 +69,13 @@ public class MaintenanceManager implements MaintenanceService {
         // Save the maintance and map Maintance to Response
         UpdateMaintenanceResponse response = mapper.map(repository.save(maintenance), UpdateMaintenanceResponse.class);
 
-        //Check if date_out column not nul, if not change state of the car
-        if(maintenance.getDateOut() != null) {
+        //Check if is_repaired column not false, if not change state of the car
+        if(maintenance.isRepaired()) {
 
-            // Get the id of the car that will send to maintance
+            // Get the id of the car that repaired
             int carId = maintenance.getCar().getId();
 
-            //Update the state of the car  carService.updateCarState(id, State.AVAILABLE);
+            //Update the state of the car
             carService.updateCarState(carId, State.AVAILABLE);
         }
         return response;

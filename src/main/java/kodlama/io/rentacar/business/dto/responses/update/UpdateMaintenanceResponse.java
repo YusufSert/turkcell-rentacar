@@ -19,6 +19,8 @@ public class UpdateMaintenanceResponse {
     private Date dateOut;
     private double cost;
 
+    private boolean isRepaired;
+
     private String description;
 }
 

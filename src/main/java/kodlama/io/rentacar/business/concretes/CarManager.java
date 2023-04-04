@@ -46,7 +46,7 @@ public class CarManager implements CarService {
 
     @Override
     public GetCarResponse getById(int id) {
-        Car car = repository.findById(id).orElseThrow();
+        Car car = repository.findById(id).orElseThrow(() -> new RuntimeException("Araba bulunamadı"));
         return mapper.map(car, GetCarResponse.class);
     }
 
@@ -71,9 +71,14 @@ public class CarManager implements CarService {
 
     @Override
     public void updateCarState(int id, State state) {
-        checkIfCarExists(id);
-        Car car = repository.findById(id).orElseThrow();
-        // If car already has the same state with requested(parameter) state throw an exception;
+        Car car = repository.findById(id).orElseThrow(() -> new RuntimeException("Araba bulunamadı"));
+
+        // Araba available ise yine available olmasına izin ver yoksa
+        // MaintenanceManager "update()" method eror verir
+        if(car.getState().equals(State.AVAILABLE) && state.equals(State.AVAILABLE)) {
+            return;
+        }
+        // If car already has the same state(maintance, rented) with requested(parameter) state throw an exception;
         if(car.getState().equals(state)) {
             throw new RuntimeException("Car already in " + state + " state !");
         }

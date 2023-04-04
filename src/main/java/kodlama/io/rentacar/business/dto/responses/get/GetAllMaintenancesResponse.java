@@ -19,5 +19,7 @@ public class GetAllMaintenancesResponse {
 
     private double cost;
 
+    private boolean isRepaired;
+
     private String description;
 }

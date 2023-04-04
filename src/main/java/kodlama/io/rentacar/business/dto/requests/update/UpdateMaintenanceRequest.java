@@ -18,5 +18,7 @@ public class UpdateMaintenanceRequest {
 
     private Date dateIn;
 
+    private boolean isRepaired;
+
     private Date dateOut;
 }

@@ -19,5 +19,6 @@ public class GetMaintenanceResponse {
 
     private double cost;
 
+    private boolean isRepaired;
     private String description;
 }

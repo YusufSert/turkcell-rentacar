@@ -34,5 +34,8 @@ public class Maintenance {
 
     private double cost;
 
+
+    private boolean isRepaired;
+
     private String description;
 }
