@@ -14,13 +14,8 @@ import kodlama.io.rentacar.repository.CarRepository;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ReflectionUtils;
 
-import java.lang.reflect.Field;
 import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
 
 @AllArgsConstructor
 @Service
@@ -33,7 +28,8 @@ public class CarManager implements CarService {
     @Override
     public List<GetAllCarsResponse> getAll(State state) {
         if(state != null) {
-           return repository.getCarByState(state)
+
+            return repository.getCarByState(state)
                .stream()
                .map(car -> mapper.map(car, GetAllCarsResponse.class))
                .toList();
@@ -70,31 +66,37 @@ public class CarManager implements CarService {
     }
 
     @Override
-    public void updateCarState(int id, State state) {
-        Car car = repository.findById(id).orElseThrow(() -> new RuntimeException("Araba bulunamadı"));
-
-        // Araba available ise yine available olmasına izin ver yoksa
-        // MaintenanceManager "update()" method eror verir
-        if(car.getState().equals(State.AVAILABLE) && state.equals(State.AVAILABLE)) {
-            return;
-        }
-        // If car already has the same state(maintance, rented) with requested(parameter) state throw an exception;
-        if(car.getState().equals(state)) {
-            throw new RuntimeException("Car already in " + state + " state !");
-        }
-        car.setState(state);
-        repository.save(car);
-    }
-
-
-    @Override
     public void delete(int id) {
         repository.deleteById(id);
     }
 
 
 
+
+
+    //***********Helper Methods****************
+
     private void checkIfCarExists(int id) {
         if (!repository.existsById(id)) throw new RuntimeException("Araba bulunamdı!");
     }
+
+    @Override
+    public void updateCarState(int id, State state) {
+        Car car = repository.findById(id).orElseThrow(() -> new RuntimeException("Araba bulunamadı"));
+        car.setState(state);
+        repository.save(car);
+    }
+
+    public void setCarStateToMaintance(int id) {
+        checkIfCarExists(id);
+        State state = repository.getCarState(id);
+        if(state.equals(State.MAINTANCE)){
+            throw new RuntimeException("Car already in maintenance state");
+        } else if (state.equals(State.RENTED)) {
+            throw new RuntimeException("Car in rented state");
+        }
+        updateCarState(id, State.MAINTANCE);
+    }
+
+
 }

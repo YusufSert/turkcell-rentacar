@@ -12,4 +12,7 @@ public interface CarRepository extends JpaRepository<Car, Integer> {
     // Returns cars where car by its state(AVAILABLE, RENTED, MAINTANCE)
     @Query("SELECT c FROM Car c where c.state = ?1")
         List<Car> getCarByState(State state);
+
+    @Query("Select c.state from Car c where c.id = ?1")
+        State getCarState(int id);
 }

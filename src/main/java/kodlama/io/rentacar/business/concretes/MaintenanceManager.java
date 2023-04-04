@@ -37,6 +37,7 @@ public class MaintenanceManager implements MaintenanceService {
 
     @Override
     public GetMaintenanceResponse getById(int id) {
+        checkIfMaintenanceExist(id);
         Maintenance maintenance = repository.findById(id).orElseThrow();
         return mapper.map(maintenance, GetMaintenanceResponse.class);
     }
@@ -54,8 +55,8 @@ public class MaintenanceManager implements MaintenanceService {
         // Get the id of the car that will send to maintance
         int carId = maintenance.getCar().getId();
 
-        // If car already in maintance method will throw exception
-        carService.updateCarState(carId, State.MAINTANCE);
+        // If car already in maintance or in rent method will throw exception
+        carService.setCarStateToMaintance(carId);
 
         // Map Maintance to Response object
         return mapper.map(maintenance, CreateMaintenanceResponse.class);
@@ -63,6 +64,7 @@ public class MaintenanceManager implements MaintenanceService {
 
     @Override
     public UpdateMaintenanceResponse update(int id, UpdateMaintenanceRequest request) {
+        checkIfMaintenanceExist(id);
         Maintenance maintenance = mapper.map(request, Maintenance.class);
         maintenance.setId(id);
 
@@ -83,7 +85,14 @@ public class MaintenanceManager implements MaintenanceService {
 
     @Override
     public void delete(int id) {
+       checkIfMaintenanceExist(id);
         repository.deleteById(id);
+    }
+
+    //***********Helper Methods****************
+
+    private void checkIfMaintenanceExist(int id) {
+        if (!repository.existsById(id)) throw new RuntimeException("No maintenance record found !");
     }
 
 }

@@ -6,24 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="41e5468e-2ea2-4921-82c8-ed25d9c36b12" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/RentACarApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/RentACarApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/abstracts/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/abstracts/CarService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/concretes/BrandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/concretes/BrandManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/concretes/CarManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/concretes/CarManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/concretes/MaintenanceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/concretes/MaintenanceManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/dto/requests/update/UpdateMaintenanceRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/dto/requests/update/UpdateMaintenanceRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/dto/responses/create/CreateMaintenanceResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/dto/responses/create/CreateMaintenanceResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/dto/responses/get/GetAllMaintenancesResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/dto/responses/get/GetAllMaintenancesResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/dto/responses/get/GetMaintenanceResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/dto/responses/get/GetMaintenanceResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/dto/responses/update/UpdateMaintenanceResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/business/dto/responses/update/UpdateMaintenanceResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/entities/Maintenance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/entities/Maintenance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kodlama/io/rentacar/api/controllers/CarsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/kodlama/io/rentacar/api/controllers/CarsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kodlama/io/rentacar/business/concretes/CarManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/kodlama/io/rentacar/business/concretes/CarManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kodlama/io/rentacar/business/concretes/MaintenanceManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/kodlama/io/rentacar/business/concretes/MaintenanceManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kodlama/io/rentacar/business/dto/requests/update/UpdateMaintenanceRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/kodlama/io/rentacar/business/dto/requests/update/UpdateMaintenanceRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kodlama/io/rentacar/business/dto/responses/create/CreateMaintenanceResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/kodlama/io/rentacar/business/dto/responses/create/CreateMaintenanceResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kodlama/io/rentacar/business/dto/responses/get/GetAllMaintenancesResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/kodlama/io/rentacar/business/dto/responses/get/GetAllMaintenancesResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kodlama/io/rentacar/business/dto/responses/get/GetMaintenanceResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/kodlama/io/rentacar/business/dto/responses/get/GetMaintenanceResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kodlama/io/rentacar/business/dto/responses/update/UpdateMaintenanceResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/kodlama/io/rentacar/business/dto/responses/update/UpdateMaintenanceResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kodlama/io/rentacar/entities/Maintenance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/kodlama/io/rentacar/entities/Maintenance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/repository/CarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kodlama/io/rentacar/repository/CarRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +25,10 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-jpa/3.0.3/spring-data-jpa-3.0.3-sources.jar!/org/springframework/data/jpa/repository/support/SimpleJpaRepository.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/6.0.6/spring-core-6.0.6-sources.jar!/org/springframework/util/Assert.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -70,7 +61,8 @@
     &quot;last_opened_file_path&quot;: &quot;/home/yusufcan/Desktop/Turkcell/turkcell2-rent-a-car/src/main/java/kodlama/io/rentacar/business/dto/responses/update&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.reader.mode&quot;
   }
 }</component>
   <component name="RecentsManager">
