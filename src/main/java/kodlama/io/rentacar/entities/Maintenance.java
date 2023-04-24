@@ -9,6 +9,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.modelmapper.internal.bytebuddy.dynamic.loading.InjectionClassLoader;
 import org.springframework.data.annotation.CreatedDate;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -22,20 +23,13 @@ public class Maintenance {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    private String information;
+    private boolean isCompleted;
+    private LocalDateTime startDate;
+    private LocalDateTime endDate;
+
     @ManyToOne
+    @JoinColumn(name = "car_id")
     private Car car;
 
-
-    @Column(nullable = false)
-    private Date dateIn;
-
-    @Column(nullable = true)
-    private Date dateOut;
-
-    private double cost;
-
-
-    private boolean isRepaired;
-
-    private String description;
 }

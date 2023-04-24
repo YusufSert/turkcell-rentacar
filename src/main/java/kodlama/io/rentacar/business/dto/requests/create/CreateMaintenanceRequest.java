@@ -13,12 +13,5 @@ import java.util.Date;
 @AllArgsConstructor
 public class CreateMaintenanceRequest {
     private int carId;
-    //private Date arrivalDate;
-
-    private double cost;
-
-    private Date dateIn;
-
-    private String description;
-
+    private String information;
 }

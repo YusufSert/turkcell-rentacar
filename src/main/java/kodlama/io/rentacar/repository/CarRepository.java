@@ -14,5 +14,7 @@ public interface CarRepository extends JpaRepository<Car, Integer> {
         List<Car> getCarByState(State state);
 
     @Query("Select c.state from Car c where c.id = ?1")
-        State getCarState(int id);
+        State getCarStateById(int id);
+
+    List<Car> findAllByStateIsNot(State maintenance);
 }

@@ -19,4 +19,7 @@ public class GetCarResponse {
     private int modelID;
 
     private int brandId;
+    private String modelName;
+    private String modelBrandName;
+
 }

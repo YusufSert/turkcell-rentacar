@@ -12,14 +12,11 @@ import kodlama.io.rentacar.entities.enums.State;
 import java.util.List;
 
 public interface CarService {
-    List<GetAllCarsResponse> getAll(State state);
+    List<GetAllCarsResponse> getAll(boolean includeMaintenance);
     GetCarResponse getById(int id);
     CreateCarResponse add(CreateCarRequest request);
     UpdateCarResponse update(int id, UpdateCarRequest request);
-
-    void setCarStateToMaintance(int id);
-    void updateCarState(int id, State state);
-
-
     void delete(int id);
+    void changeState(int carId, State state);
+
 }

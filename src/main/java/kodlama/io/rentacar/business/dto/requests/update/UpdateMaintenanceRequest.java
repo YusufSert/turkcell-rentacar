@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Setter
@@ -13,12 +14,8 @@ import java.util.Date;
 @AllArgsConstructor
 public class UpdateMaintenanceRequest {
     private int carId;
-    private double cost;
-    private String description;
-
-    private Date dateIn;
-
-    private boolean isRepaired;
-
-    private Date dateOut;
+    private String information;
+    private boolean isCompleted;
+    private LocalDateTime startDate;
+    private LocalDateTime endDate;
 }

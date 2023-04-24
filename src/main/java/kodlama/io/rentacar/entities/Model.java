@@ -20,6 +20,7 @@ public class Model {
     private int id;
     private String name;
     @ManyToOne
+    @JoinColumn(name = "brand_id")
     private Brand brand; // brandId
     @OneToMany(mappedBy = "model")
     private List<Car> cars;

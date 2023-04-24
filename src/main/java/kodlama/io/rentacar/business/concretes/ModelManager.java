@@ -2,72 +2,70 @@ package kodlama.io.rentacar.business.concretes;
 
 import kodlama.io.rentacar.business.abstracts.ModelService;
 import kodlama.io.rentacar.business.dto.requests.create.CreateModelRequest;
+import kodlama.io.rentacar.business.dto.requests.update.UpdateModelRequest;
 import kodlama.io.rentacar.business.dto.responses.create.CreateModelResponse;
 import kodlama.io.rentacar.business.dto.responses.get.GetAllModelsResponse;
 import kodlama.io.rentacar.business.dto.responses.get.GetModelResponse;
+import kodlama.io.rentacar.business.dto.responses.update.UpdateModelResponse;
+import kodlama.io.rentacar.business.rules.ModelBusinessRules;
 import kodlama.io.rentacar.entities.Model;
 import kodlama.io.rentacar.repository.ModelRepository;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class ModelManager implements ModelService {
     private final ModelRepository repository;
     private final ModelMapper mapper;
-
+    private final ModelBusinessRules rules;
 
     @Override
     public List<GetAllModelsResponse> getAll() {
-        List<Model> modelList = repository.findAll();
-        List<GetAllModelsResponse> responses = new ArrayList<>();
+        List<Model> models = repository.findAll();
+        List<GetAllModelsResponse> response = models
+                .stream()
+                .map(model -> mapper.map(model, GetAllModelsResponse.class))
+                .toList();
 
-        for(Model model : modelList) {
-            GetAllModelsResponse response =  mapper.map(model, GetAllModelsResponse.class);
-            responses.add(response);
-        }
-        return responses;
+        return response;
     }
 
     @Override
     public GetModelResponse getById(int id) {
+        rules.checkIfModelExists(id);
         Model model = repository.findById(id).orElseThrow();
-        return mapper.map(model, GetModelResponse.class);
+        GetModelResponse response = mapper.map(model, GetModelResponse.class);
+
+        return response;
     }
 
     @Override
     public CreateModelResponse add(CreateModelRequest request) {
         Model model = mapper.map(request, Model.class);
-        //request     =>Integer brand_id, String name
-        //model       => Integer id, String name, Brand brand
-        //Model-Table => | id | name | brand_id(FK) |
-        //Model id must be set it 0 because mapper mixes the brand_id and the id of the model
         model.setId(0);
         repository.save(model);
-        //System.out.println(model.getId());
-        //System.out.println(model.getBrand().getId());
-        return mapper.map(model, CreateModelResponse.class);
-    }
+        CreateModelResponse response = mapper.map(model, CreateModelResponse.class);
 
+        return response;
+    }
     @Override
-    public CreateModelResponse update(int id, CreateModelRequest request) {
-        checkIfModelExists(id);
+    public UpdateModelResponse update(int id, UpdateModelRequest request) {
+        rules.checkIfModelExists(id);
         Model model = mapper.map(request, Model.class);
         model.setId(id);
         repository.save(model);
-        return mapper.map(model, CreateModelResponse.class);
+        UpdateModelResponse response = mapper.map(model, UpdateModelResponse.class);
+
+        return response;
     }
 
     @Override
     public void delete(int id) {
-        checkIfModelExists(id);
+        rules.checkIfModelExists(id);
         repository.deleteById(id);
-    }
-
-    private void checkIfModelExists(int id) {
-        if(!repository.existsById(id)) throw new RuntimeException("Marka bulunamadı!");
     }
 }
